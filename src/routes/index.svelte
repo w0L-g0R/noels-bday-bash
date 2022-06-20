@@ -1,5 +1,6 @@
 <script>
 	import JumpingText from '$lib/JumpingText.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <main>
