@@ -11,9 +11,18 @@ const config = {
 		}
 	}),
 
-	kit: {
-		adapter: adapter()
-	}
+    kit: {
+        adapter: adapter({
+            pages: "docs",
+            assets: "docs"
+        }),
+        paths: {
+            // change below to your repo name
+            base: "/noels-bday-bash",
+        },
+        // hydrate the <div id="svelte"> element in src/app.html
+        target: "#svelte"
+    }
 };
 
 export default config;
