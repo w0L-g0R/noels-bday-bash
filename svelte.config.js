@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import preprocessor from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -20,8 +20,6 @@ const config = {
             // change below to your repo name
             base: "/noels-bday-bash",
         },
-        // hydrate the <div id="svelte"> element in src/app.html
-        target: "#svelte"
     }
 };
 

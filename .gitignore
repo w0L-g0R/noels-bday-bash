@@ -7,6 +7,4 @@ node_modules
 .env.*
 !.env.example
 /_TUTORIAL
-static/img
-static/txt
-static/*.psd
+/_DESIGN
