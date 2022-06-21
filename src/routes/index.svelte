@@ -1,40 +1,39 @@
 <script lang="ts">
-	import JumpingText from '$lib/JumpingText.svelte';
+	import { fade, fly, blur, scale } from 'svelte/transition';
 	import SweetView from '$lib/components/sweet/SweetView.svelte';
-	import { fade, fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
-	// @ts-ignore
-	import anime from 'animejs';
+	import DirtyView from '$lib/components/dirty/DirtyView.svelte';
 
-	let currentView: string = 'sweet';
-	let startDestroySweetView: boolean = false;
+	let sweetView: boolean = true;
+	let destroySweetView: boolean = false;
+	let dirtyView: boolean = false;
 
 	function changeView() {
-		startDestroySweetView = true;
+		destroySweetView = true;
+		dirtyView = true;
 	}
 
 	function removeSweetViewTemplateElements() {
 		console.log('Destroyed Sweet View');
-		currentView = 'dirty';
+		sweetView = false;
 	}
 </script>
 
 <main>
 	<button on:click={changeView}>PAUSE</button>
 
-	{#if currentView === 'sweet'}
-		<div class="sweet-view">
-			<SweetView
-				{startDestroySweetView}
-				on:finishedDestroyAnimation={removeSweetViewTemplateElements}
-			/>
+	{#if sweetView}
+		<div out:fade>
+			<SweetView {destroySweetView} on:finishedSetdownSweetView={removeSweetViewTemplateElements} />
+		</div>
+	{/if}
+
+	{#if dirtyView}
+		<div>
+			<DirtyView />
 		</div>
 	{/if}
 </main>
 
 <style lang="sass">
-
-	.sweet-view
-		width: 100%
 
 </style>

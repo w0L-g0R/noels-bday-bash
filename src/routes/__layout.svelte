@@ -1,6 +1,6 @@
 <script>
 	import '../app.sass';
-	// import '../../styles/global.sass';
+	import '../styles/fonts.sass';
 </script>
 
 <main>

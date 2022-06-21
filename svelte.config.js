@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-static';
-// import adapter from 'svelte-adapter-github';
 import preprocessor from 'svelte-preprocess';
 
 
@@ -9,18 +8,15 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocessor({
 		sass: {
-			prependData:"@import './styles/global.sass'"
+			prependData:"@import './src/styles/global.sass'"
 		}
 	}),
-
     kit: {
-
 		adapter: adapter({
-            pages: 'build',  // path to build directory
-            assets: 'build',  // path to build directory
+            pages: 'build',
+			assets: 'build',
             fallback: "index.html"
         }),
-
     }
 };
 
