@@ -1,8 +1,7 @@
-// import adapter from '@sveltejs/adapter-static';
-import adapter from 'svelte-adapter-github';
+import adapter from '@sveltejs/adapter-static';
+// import adapter from 'svelte-adapter-github';
 import preprocessor from 'svelte-preprocess';
 
-const dev = "production" === "development";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,34 +15,12 @@ const config = {
 
     kit: {
 
-		// adapter: adapter({
-		// 	// default options are shown
-		// 	pages: 'build',
-		// 	assets: 'build',
-		// 	domain: null,
-		// 	jekyll: false,
-		// 	fallback: null,
-		// 	precompress: false
-		// }),
+		adapter: adapter({
+            pages: 'build',  // path to build directory
+            assets: 'build',  // path to build directory
+            fallback: "index.html"
+        }),
 
-		// // adapter: adapter({
-        // //     pages: 'build',  // path to public directory
-        // //     assets: 'build',  // path to public directory
-        // //     fallback: "index.html"
-        // // }),
-        // // paths: {
-        // //     base: '/noels-bday-bash',
-        // //     // assets: '/noels-bday-bash'
-        // // }, 
-        // // adapter: adapter({
-        // //     pages: "docs",
-        // //     assets: "docs",
-		// // 	fallback: null,
-        // // }),
-        // paths: {
-        //     // change below to your repo name
-        //     base: "/noels-bday-bash",
-        // },
     }
 };
 
