@@ -156,7 +156,7 @@
 		});
 
 		viewSwitchAnimation.add(
-			{ 
+			{
 				targets: '.flames',
 				translateY: ['100%', '0%'],
 				duration: 500,
