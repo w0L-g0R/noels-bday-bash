@@ -13,22 +13,93 @@ export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): v
 		});
 
 		// HEAD
-		// dirtyViewSetupAnimation.add({
-		// 	targets: '.head',
-		// 	opacity: 1,
-		// 	translateY: ['-130%', '-1%'],
-		// 	scale: 1,
-		// 	duration: 2000
-		// 	// complete: function () {
-		// 	// 	dispatch('finishedSetdownSweetView');
-		// 	// }
-		// });
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.head',
+				translateY: ['-100%', '1%'],
+				scale: [3, 1],
+				duration: 500
+			},
+			'1000'
+		);
 
-		// FLAMES
-		// introOne.add({
-		// 	targets: '.flames',
-		// 	translateY: ['100%', '10%']
-		// });
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.noel-glasses',
+				rotate: '2turn',
+				scale: [0, 1],
+				duration: 1000
+			},
+			'500'
+		);
+
+		// FLAMES;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.flames',
+				translateY: ['100%', '10%']
+			},
+			'400'
+		);
+
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.booze',
+				translateY: ['100%', '10%']
+			},
+			'400'
+		);
+
+		// FLAMES;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.garden',
+				opacity: ['0%', '85%']
+			},
+			'400'
+		);
+
+		// // NAME
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.name',
+				scale: [
+					{ value: ['0%', '100%'], duration: 500, easing: 'easeOutElastic' },
+					{ value: ['100%', '60%'], easing: 'easeInElastic', duration: 500 }
+				]
+			},
+			'1200'
+		);
+
+		// DIRTY;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.dirty',
+				translateX: ['-100vw', '0vw'],
+				easing: 'easeInOutQuint'
+			},
+			'1500'
+		);
+
+		// DIRTY;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.thirty',
+				translateX: ['100vw', '0vw'],
+				easing: 'easeInOutQuint'
+			},
+			'1500'
+		);
+
+		// DIRTY;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.fireworks',
+				scale: ['0', '1'],
+				easing: 'easeInQuart'
+			},
+			'1800'
+		);
 
 		// // NOEL
 		// introOne.add(
@@ -47,16 +118,6 @@ export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): v
 		// 		targets: '.logo',
 		// 		scale: ['0%', '100%'],
 		// 		easing: 'easeOutBounce'
-		// 	},
-		// 	'1000'
-		// );
-
-		// // NAME
-		// introOne.add(
-		// 	{
-		// 		targets: '.name',
-		// 		scale: ['0%', '100%'],
-		// 		easing: 'easeOutElastic'
 		// 	},
 		// 	'1000'
 		// );

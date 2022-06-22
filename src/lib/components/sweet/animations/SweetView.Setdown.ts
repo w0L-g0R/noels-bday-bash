@@ -77,7 +77,7 @@ export function startSweetViewSetdownAnimations(
 			{
 				targets: '.noel',
 				scale: 0,
-				duration: 1000,
+				duration: 800,
 				complete: () => {
 					const e: HTMLElement = document.querySelector('.noel');
 					if (e !== null && e.parentElement !== null) {
@@ -98,16 +98,23 @@ export function startSweetViewSetdownAnimations(
 			'-=1500'
 		);
 
+		// SPEECH
+		viewSwitchAnimation.add(
+			{
+				targets: '.speech-bubble',
+				opacity: 1,
+				duration: 500
+			},
+			'-=500'
+		);
+
 		// HEAD
 		viewSwitchAnimation.add(
 			{
 				targets: '.head',
-				translateY: ['1%', '-120%'],
-				scale: 4,
-				duration: 600,
-				complete: function () {
-					dispatch('finishedSetdownSweetView');
-				}
+				translateY: ['1%', '-100%'],
+				scale: 3,
+				duration: 1000
 			},
 			'-=1500'
 		);
@@ -118,121 +125,18 @@ export function startSweetViewSetdownAnimations(
 				keyframes: [{ opacity: 0, duration: 50 }],
 				easing: 'easeInCirc',
 				direction: 'alternate',
-				loop: 16,
+				loop: 12,
 				begin: function () {
 					const e: HTMLElement = document.querySelector('.bg');
 					if (e !== null) {
 						e.style.filter = 'hue-rotate(130deg)sepia(13%)';
 					}
+				},
+				complete: function () {
+					dispatch('finishedSetdownSweetView');
 				}
 			});
-		}, 800);
+		}, 1000);
 		///////////////////////////////////////
-		// viewSwitchAnimation.add(
-		// 	{
-		// 		targets: '.bg',
-		// 		keyframes: [
-		// 			{ opacity: 0, duration: 10 },
-		// 			{ opacity: 1, duration: 10 }
-		// 		],
-		// 		easing: 'easeInOutSine',
-		// 		direction: 'alternate',
-		// 		loop: true
-		// 	},
-		// 	'200'
-		// );
-
-		// NOEL
-		// viewSwitchAnimation.add(
-		// 	{
-		// 		targets: '.noel',
-		// 		// rotate: {
-		// 		// 	value: '2turn'
-		// 		// },
-		// 		scale: [1, 0]
-		// 		// complete: function () {
-		// 		// 	dispatch('finishedSetdownSweetView');
-		// 		// }
-		// 	},
-		// 	'-=500'
-		// );
 	}
-
-	// viewSwitchAnimation.add(
-	// 	{
-	// 		targets: '.flames',
-	// 		translateY: ['100%', '0%'],
-	// 		duration: 500,
-	// 		easing: 'linear',
-	// 		// autoplay: true
-
-	// 		complete: function () {
-	// 			grass = false;
-	// 		}
-	// 	},
-	// 	'-=1000'
-	// );
-
-	// // NOEL
-	// sweetViewOutro.add(
-	// 	{
-	// 		targets: '.noel',
-	// 		rotate: '-6deg',
-	// 		translateY: ['150%', '20%'],
-	// 		easing: 'spring(1, 20, 30, 10)'
-	// 	},
-	// 	'1400'
-	// );
-
-	// // LOGO
-	// sweetViewOutro.add(
-	// 	{
-	// 		targets: '.logo',
-	// 		scale: ['0%', '100%'],
-	// 		easing: 'easeOutBounce'
-	// 	},
-	// 	'1000'
-	// );
-
-	// // NAME
-	// sweetViewOutro.add(
-	// 	{
-	// 		targets: '.name',
-	// 		scale: ['0%', '100%'],
-	// 		easing: 'easeOutElastic'
-	// 	},
-	// 	'1000'
-	// );
-
-	// // RAINBOW SCALE
-	// sweetViewOutro.add(
-	// 	{
-	// 		targets: '.rainbow',
-	// 		scale: ['150%', '100%'],
-	// 		easing: 'easeOutCubic'
-	// 	},
-	// 	'1800'
-	// );
-
-	// // RAINBOW OPACITY
-	// sweetViewOutro.add(
-	// 	{
-	// 		targets: '.rainbow',
-	// 		opacity: ['0%', '80%'],
-	// 		easing: 'easeOutCubic',
-	// 		complete: startInfiniteAnimation
-	// 	},
-	// 	'1500'
-	// );
-
-	// console.log('Hi', animeNoel);
-	// // animeBallons.autoplay = false;
-	// // animeBallons.loop = false;
-	// animeBallons.paused = true;
-	// // animeNoel.pause();
-
-	// // // animeBallons.remove();
-	// // animeClickMe.pause;
-	// // animeLogo.pause;
-	// // animeNoel.pause;
 }

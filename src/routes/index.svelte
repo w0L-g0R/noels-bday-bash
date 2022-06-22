@@ -9,12 +9,12 @@
 
 	function changeView() {
 		destroySweetView = true;
-		dirtyView = true;
 	}
 
 	function removeSweetViewTemplateElements() {
 		console.log('Destroyed Sweet View');
 		sweetView = false;
+		dirtyView = true;
 	}
 </script>
 

@@ -2,6 +2,7 @@
 	import NeonText from '$lib/NeonText.svelte';
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { fade, blur } from 'svelte/transition';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewInfiniteAnimations } from './animations/DirtyView.Infinite';
@@ -28,8 +29,19 @@
 	</div> -->
 
 	<div class="bg">
+		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" />
 		<img src="/sweet/head_01.png" class="head" alt="alt" />
 		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
+		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
+		<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
+		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
+		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" />
+		<div class="dirty">
+			<NeonText --font-family="Automania" showDirty={true} />
+		</div>
+		<div class="thirty">
+			<NeonText --font-family="Automania" showDirty={false} />
+		</div>
 	</div>
 </main>
 
@@ -48,23 +60,46 @@
 			justify-content: center
 			align-items: center
 
+		.garden
+			z-index: -8
+			position: fixed
+			top: 0
+			left: 0
+			opacity: 0
+				
+			min-width: 100%
+			min-height: 100%
+
+			filter: contrast(228%) brightness(60%)
+
 		img
 			position: absolute
 
-		// .grass
-		// 	width: 100%
-		// 	min-height: 45%
-		// 	object-fit: cover
-		// 	position: fixed
-		// 	bottom: 0px
-		// 	transform: translateY(60%)
-		// 	z-index: -7
-
-		.head
+		.dirty
 			z-index: -1
 			position: fixed
+			top: 20%
+
+		.thirty
+			z-index: -1
+			position: fixed
+			top: 28%
+
+		.booze
+			min-width: 70%
+			max-width: 80%
+			z-index: -7
+			position: fixed
+			top: 38%
+			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
+
+		.head
+			z-index: 1
+			position: fixed
 			top: 40%
-			opacity: 0
+			opacity: 1
+			scale: 4,
+
 
 		.flames
 			width: 100%
@@ -73,13 +108,14 @@
 			position: fixed
 			bottom: 0px
 			transform: translateY(100%)
-			z-index: -7
+			z-index: -6
 
-		// .thirty
-		// 	position: fixed
-		// 	z-index: -6
-		// 	top: 30%
-		
+		.fireworks
+			position: fixed
+			z-index: -6
+			top: -20%
+			filter: contrast(188%) brightness(0%) 
+
 		// .ballons
 		// 	opacity: 0%
 		// 	position: fixed
@@ -90,13 +126,15 @@
 		// 	z-index: -4
 		// 	top: -2%
 
-		// .name
-		// 	z-index: -3
-		// 	top: 0%
+		.name
+			z-index: -3
+			top: 2%
+			transform: scale(0.5)
 
-		// .noel
-		// 	z-index: -2
-		// 	position: fixed
+		.noel-glasses
+			z-index: 0
+			top: 39%
+			position: fixed
 
 		// .head
 		// 	z-index: -1

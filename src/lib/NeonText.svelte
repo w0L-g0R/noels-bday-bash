@@ -9,7 +9,9 @@
 		</div>
 	{:else}
 		<div class="sign">
-			<span class="fast-flicker">T</span>hir<span class="flicker">t</span>y
+			T<span class="fast-flicker">hi</span><span class="flicker">r</span>
+
+			t<span class="fast-flicker">y</span>
 		</div>
 	{/if}
 </main>
@@ -30,7 +32,7 @@
     top: 50%
     font-family: var(--font-family)
     text-transform: uppercase
-    font-size: 6em
+    font-size: 5em
     color: #ffe6ff
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,-0.2rem 0.1rem 1rem #ff65bd,0.2rem 0.1rem 1rem #ff65bd,0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483
     animation: shine 2s forwards, flicker 3s infinite

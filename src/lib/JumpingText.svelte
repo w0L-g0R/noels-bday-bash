@@ -1,13 +1,14 @@
 <main>
 	<div class="wrapper">
-		<span>C</span>
-		<span>L</span>
+		<span>J</span>
+		<span>O</span>
 		<span>I</span>
-		<span>C</span>
-		<span style="margin-right:12px">K</span>
-		<span>M</span>
-		<span>E</span>
-		<span>!</span>
+		<span>N</span>
+		<span>?</span>
+		<!-- <span style="margin-right:12px">K</span> -->
+		<!-- <span>M</span> -->
+		<!-- <span>E</span> -->
+		<!-- <span>!</span> -->
 	</div>
 </main>
 
