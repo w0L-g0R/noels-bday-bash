@@ -1,8 +1,7 @@
 <script lang="ts">
 	import NeonText from '$lib/NeonText.svelte';
 	import { onMount } from 'svelte';
-	import { createEventDispatcher } from 'svelte';
-	import { fade, blur } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewInfiniteAnimations } from './animations/DirtyView.Infinite';
@@ -30,10 +29,12 @@
 
 	<div class="bg">
 		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" />
-		<img src="/sweet/head_01.png" class="head" alt="alt" />
 		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
 		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
-		<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
+		<div class="unicorn" in:fade>
+			<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
+			<img src="/sweet/head_01.png" class="head" alt="alt" />
+		</div>
 		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
 		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" />
 		<div class="dirty">
@@ -93,12 +94,25 @@
 			top: 38%
 			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
 
-		.head
-			z-index: 1
-			position: fixed
-			top: 40%
-			opacity: 1
-			scale: 4,
+		.unicorn
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -20%)
+
+			.head
+				z-index: 1
+				position: absolute
+				// bottom: 24px
+				opacity: 1
+				scale: 4,
+				right: 26px
+				top: 200px
+
+
+			.noel-glasses
+				z-index: 0
+				position: relative
 
 
 		.flames
@@ -131,10 +145,7 @@
 			top: 2%
 			transform: scale(0.5)
 
-		.noel-glasses
-			z-index: 0
-			top: 39%
-			position: fixed
+
 
 		// .head
 		// 	z-index: -1

@@ -5,10 +5,6 @@
 		<span>I</span>
 		<span>N</span>
 		<span>?</span>
-		<!-- <span style="margin-right:12px">K</span> -->
-		<!-- <span>M</span> -->
-		<!-- <span>E</span> -->
-		<!-- <span>!</span> -->
 	</div>
 </main>
 
@@ -22,7 +18,7 @@
     span 
         -webkit-text-stroke-width: 1.25px
         -webkit-text-stroke-color: #000
-        font-size: 66px
+        font-size: 6rem
         text-shadow: 0 0px #f3c623, 0 0px #f2aaaa
         transform: translate(0, 100%) rotate(4deg)
         animation: jump 2s ease-in-out infinite

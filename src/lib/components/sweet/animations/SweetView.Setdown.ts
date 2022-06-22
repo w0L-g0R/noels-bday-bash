@@ -8,7 +8,7 @@ export function startSweetViewSetdownAnimations(
 	dispatch: Dispatch
 ): void | any {
 	if (browser && startDestroySweetView == true) {
-		const viewSwitchAnimation = anime.timeline({
+		const sweetViewSetupAnimation = anime.timeline({
 			//each of the below animations will have a 1000ms duration
 			duration: 1500,
 			easing: 'easeInSine',
@@ -16,13 +16,13 @@ export function startSweetViewSetdownAnimations(
 		});
 
 		// GRASS
-		viewSwitchAnimation.add({
+		sweetViewSetupAnimation.add({
 			targets: '.grass',
 			translateY: ['1%', '130%']
 		});
 
 		// HEAD
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.rainbow',
 				scale: 0,
@@ -31,7 +31,7 @@ export function startSweetViewSetdownAnimations(
 			'-=1500'
 		);
 
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.logo',
 				translateY: '-170%',
@@ -40,7 +40,7 @@ export function startSweetViewSetdownAnimations(
 			'-=1500'
 		);
 
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.logo',
 				opacity: 0,
@@ -49,7 +49,7 @@ export function startSweetViewSetdownAnimations(
 			'-=1500'
 		);
 
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.name',
 				translateY: '-170%',
@@ -58,7 +58,7 @@ export function startSweetViewSetdownAnimations(
 			'-=2500'
 		);
 
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				duration: 1000,
 				easing: 'easeInCirc',
@@ -73,7 +73,7 @@ export function startSweetViewSetdownAnimations(
 		);
 
 		// HEAD
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.noel',
 				scale: 0,
@@ -89,7 +89,7 @@ export function startSweetViewSetdownAnimations(
 		);
 
 		// HEAD
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.head',
 				opacity: 1,
@@ -99,7 +99,7 @@ export function startSweetViewSetdownAnimations(
 		);
 
 		// SPEECH
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.speech-bubble',
 				opacity: 1,
@@ -109,11 +109,11 @@ export function startSweetViewSetdownAnimations(
 		);
 
 		// HEAD
-		viewSwitchAnimation.add(
+		sweetViewSetupAnimation.add(
 			{
 				targets: '.head',
-				translateY: ['1%', '-100%'],
-				scale: 3,
+				translateY: ['0%', '-50%'],
+				scale: 2,
 				duration: 1000
 			},
 			'-=1500'

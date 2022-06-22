@@ -24,11 +24,11 @@
 		<img src="/sweet/grass_01.png" class="grass" alt="alt" />
 		<img src="/sweet/sweet_02.png" class="logo" alt="alt" />
 		<img src="/sweet/noels_txt_07.png" class="name" alt="alt" />
-		<img src="/sweet/noel_04.png" class="noel" alt="alt" />
 		<img src="/sweet/head_01.png" class="head" alt="alt" />
 		<img src="/sweet/rain_02.png" class="rainbow" alt="alt" />
 		<img src="/sweet/speech_bubble_01.png" class="speech-bubble" alt="alt" />
 		{#if !destroySweetView}
+			<img src="/sweet/noel_04.png" class="noel" alt="alt" />
 			<img src="/sweet/ballons_02.png" class="ballons left" alt="alt" />
 			<img src="/sweet/ballons_02.png" class="ballons right" alt="alt" />
 			<div class="click-me">
@@ -69,9 +69,7 @@
 		.speech-bubble
 			z-index: 1
 			opacity: 0%
-			top: 50%
-			left: 43%
-			// right: 28px 
+			position: fixed
 
 
 		.rainbow

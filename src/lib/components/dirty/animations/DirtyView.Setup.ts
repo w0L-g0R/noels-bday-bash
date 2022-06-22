@@ -16,8 +16,9 @@ export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): v
 		dirtyViewSetupAnimation.add(
 			{
 				targets: '.head',
-				translateY: ['-100%', '1%'],
-				scale: [3, 1],
+				translateY: ['-200%', '0%'],
+				opacity: { value: [0, 1], duration: 200 },
+				scale: [9, 1],
 				duration: 500
 			},
 			'1000'
