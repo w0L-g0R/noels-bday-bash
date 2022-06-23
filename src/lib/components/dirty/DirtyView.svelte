@@ -20,18 +20,11 @@
 </script>
 
 <main>
-	<!-- <div class="dirty">
-		<NeonText --font-family="Automania" showDirty={true} />
-	</div>
-	<div class="thirty">
-		<NeonText --font-family="Automania" showDirty={false} />
-	</div> -->
-
 	<div class="bg">
 		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" />
 		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
 		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
-		<div class="unicorn" in:fade>
+		<div class="unicorn">
 			<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
 			<img src="/sweet/head_01.png" class="head" alt="alt" />
 		</div>
@@ -48,6 +41,11 @@
 
 <style lang="sass">
 
+	@import './media-queries/extra-small.sass'
+	@import './media-queries/small.sass'
+	@import './media-queries/medium.sass'
+	@import './media-queries/large.sass'
+
 	main
 		.bg
 			z-index: -8
@@ -60,6 +58,7 @@
 			display: flex
 			justify-content: center
 			align-items: center
+
 
 		.garden
 			z-index: -8
@@ -76,23 +75,58 @@
 		img
 			position: absolute
 
+		.name
+			z-index: -3
+			top: 6%
+			transform: scale(2)
+			max-width: 100%
+			
+			// @include media("<=small", "portrait")
+			// 	top: 3%
+
+			// @include media(">=medium", "portrait")
+			// 	border: 2px solid pink
+			// 	top: 0%
+			// 	// transform: scale(0.3, 0.3)
+
+			// @include media(">=medium", "landscape")
+			// 	border: 2px solid red
+			// 	top: 0%
+
+
 		.dirty
 			z-index: -1
 			position: fixed
 			top: 20%
+
+
 
 		.thirty
 			z-index: -1
 			position: fixed
 			top: 28%
 
+			// @media screen and (max-height: 864px)
+			// 	top: 30%
+
 		.booze
-			min-width: 70%
-			max-width: 80%
-			z-index: -7
+			// min-width: 70%
+			// max-width: 80%
+			z-index: -6
 			position: fixed
 			top: 38%
 			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
+
+			// @include media(">M01","<=M02","landscape")
+			// // @media screen and (max-width: 300px)
+			// 	top: 10%
+			// 	border: 5px black solid
+
+			// @media screen and (max-height: 864px)
+			// 	top: 10%
+			// 	max-width: 50%
+
+
 
 		.unicorn
 			position: absolute
@@ -122,40 +156,17 @@
 			position: fixed
 			bottom: 0px
 			transform: translateY(100%)
-			z-index: -6
+			z-index: -5
 
 		.fireworks
 			position: fixed
-			z-index: -6
+			z-index: -7
 			top: -20%
 			filter: contrast(188%) brightness(0%) 
 
-		// .ballons
-		// 	opacity: 0%
-		// 	position: fixed
-		// 	z-index: -5
-		// 	transform: scale(0.9) 
-
-		// .logo
-		// 	z-index: -4
-		// 	top: -2%
-
-		.name
-			z-index: -3
-			top: 2%
-			transform: scale(0.5)
-
-
-
-		// .head
-		// 	z-index: -1
-		// 	position: fixed
-		// 	top: 40%
-
-		// .click-me
-		// 	opacity: 0%
-		// 	position: fixed
-		// 	z-index: 1
-
+			// @media screen and (max-height: 864px)
+			// 	top: -20%
+			// 	width: 45%
+			// 	min-width: 600px
 
 </style>

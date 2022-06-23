@@ -1,0 +1,32 @@
+main
+    @include media("<=width-sm", "portrait")
+        .noel
+            height: 70vh
+
+        .rainbow
+            width: 120vw
+
+        .ballons
+            width: 100vw
+
+        .logo-container
+            height: 55vh
+
+    @include media(">=height-lg", "landscape")
+        .logo-container
+            transform: translateY(20px)
+
+    @include media(">=height-md", "portrait")
+
+    @include media(">=width-sm", "<=width-lg", "portrait")
+        .noel
+            height: 70vh
+
+        .rainbow
+            width: 80vw
+
+        .ballons
+            width: 100vw
+
+        .logo-container
+            transform: translateY(30px)

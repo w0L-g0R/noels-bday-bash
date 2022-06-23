@@ -101,7 +101,7 @@ export function startSweetViewSetdownAnimations(
 		// SPEECH
 		sweetViewSetupAnimation.add(
 			{
-				targets: '.speech-bubble',
+				targets: '.just-kidding',
 				opacity: 1,
 				duration: 500
 			},

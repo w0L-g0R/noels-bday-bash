@@ -8,7 +8,8 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocessor({
 		sass: {
-			prependData:"@import './src/styles/global.sass'"
+			prependData:"@import './src/styles/global.sass'",
+			includePaths: ['./src/lib/components/dirty/media-queries/*.sass']
 		}
 	}),
     kit: {
