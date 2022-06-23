@@ -38,8 +38,8 @@
     animation: shine 2s forwards, flicker 3s infinite
 
 
-    // @include media("<=small", "portrait")
-    //     font-size: 4rem
+    @include media("<=width-xs", "portrait")
+        font-size: 4rem
 
 @keyframes blink 
     0%,

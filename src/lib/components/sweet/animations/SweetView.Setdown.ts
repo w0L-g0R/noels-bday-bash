@@ -113,6 +113,7 @@ export function startSweetViewSetdownAnimations(
 			{
 				targets: '.head',
 				translateY: ['0%', '-50%'],
+				translateX: ['0%', '2%'],
 				scale: 2,
 				duration: 1000
 			},

@@ -1,0 +1,96 @@
+main
+
+    @include media("<=width-sm", "portrait")
+
+        .garden
+            width: 100vw
+
+        .unicorn
+            position: absolute
+            top: 40%
+
+            .head
+                position: relative
+                left: 10%
+                top: 12vh
+                height: 40vh
+
+            .noel-glasses
+                height: 70vh
+
+        .name
+            z-index: -3
+            width: 100%
+
+        .logo-container
+            position: absolute
+            top: 0%
+
+            .dirty
+                top: 18%
+
+            .thirty
+                position: relative
+                top: 48%
+
+        .booze
+            top: 30%
+            width: 130vw
+
+        .fireworks
+            width: 130vw
+
+    @include media(">=width-sm",  "landscape")
+        .garden
+            width: 10vw
+
+        .unicorn
+            border: 2px blue solid
+            position: absolute
+            transform: scale(0.8)
+            top: 40%
+
+            .head
+                position: relative
+                left: 10%
+                top: 83px
+
+        .name
+            z-index: -3
+            top: 0%
+            // width: 100%
+
+        .logo-container
+            position: absolute
+            top: 0%
+
+            .dirty
+                top: 18%
+
+            .thirty
+                position: relative
+                top: 48%
+
+        .booze
+            top: 30%
+            width: 130vw
+
+        .fireworks
+            // width: 80vw
+            max-width: 600px
+            // transform: scale(0.7)
+    // @include media(">=width-lg", "portrait")
+
+    //     .name
+    //         z-index: -3
+    //         border: 2px red solid
+
+    //     .dirty
+    //         z-index: -1
+    //         position: fixed
+    //         top: 20%
+
+    //     .thirty
+    //         z-index: -1
+    //         position: fixed
+    //         top: 28%

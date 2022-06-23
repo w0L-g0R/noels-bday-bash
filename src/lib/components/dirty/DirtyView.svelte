@@ -28,23 +28,22 @@
 			<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
 			<img src="/sweet/head_01.png" class="head" alt="alt" />
 		</div>
-		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
 		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" />
-		<div class="dirty">
-			<NeonText --font-family="Automania" showDirty={true} />
-		</div>
-		<div class="thirty">
-			<NeonText --font-family="Automania" showDirty={false} />
+		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
+		<div class="logo-container">
+			<div class="dirty">
+				<NeonText --font-family="Automania" showDirty={true} />
+			</div>
+			<div class="thirty">
+				<NeonText --font-family="Automania" showDirty={false} />
+			</div>
 		</div>
 	</div>
 </main>
 
 <style lang="sass">
 
-	@import './media-queries/extra-small.sass'
-	@import './media-queries/small.sass'
-	@import './media-queries/medium.sass'
-	@import './media-queries/large.sass'
+	@import './dirty-view.media-queries.sass'
 
 	main
 		.bg
@@ -55,10 +54,13 @@
 				
 			min-width: 100%
 			min-height: 100%
+
 			display: flex
 			justify-content: center
 			align-items: center
 
+		img
+			position: absolute
 
 		.garden
 			z-index: -8
@@ -72,101 +74,60 @@
 
 			filter: contrast(228%) brightness(60%)
 
-		img
-			position: absolute
-
-		.name
-			z-index: -3
-			top: 6%
-			transform: scale(2)
-			max-width: 100%
-			
-			// @include media("<=small", "portrait")
-			// 	top: 3%
-
-			// @include media(">=medium", "portrait")
-			// 	border: 2px solid pink
-			// 	top: 0%
-			// 	// transform: scale(0.3, 0.3)
-
-			// @include media(">=medium", "landscape")
-			// 	border: 2px solid red
-			// 	top: 0%
-
-
-		.dirty
-			z-index: -1
-			position: fixed
-			top: 20%
-
-
-
-		.thirty
-			z-index: -1
-			position: fixed
-			top: 28%
-
-			// @media screen and (max-height: 864px)
-			// 	top: 30%
-
-		.booze
-			// min-width: 70%
-			// max-width: 80%
-			z-index: -6
-			position: fixed
-			top: 38%
-			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
-
-			// @include media(">M01","<=M02","landscape")
-			// // @media screen and (max-width: 300px)
-			// 	top: 10%
-			// 	border: 5px black solid
-
-			// @media screen and (max-height: 864px)
-			// 	top: 10%
-			// 	max-width: 50%
-
-
-
-		.unicorn
-			position: absolute
-			top: 50%
-			left: 50%
-			transform: translate(-50%, -20%)
-
-			.head
-				z-index: 1
-				position: absolute
-				// bottom: 24px
-				opacity: 1
-				scale: 4,
-				right: 26px
-				top: 200px
-
-
-			.noel-glasses
-				z-index: 0
-				position: relative
-
-
-		.flames
-			width: 100%
-			min-height: 45%
-			object-fit: cover
-			position: fixed
-			bottom: 0px
-			transform: translateY(100%)
-			z-index: -5
-
 		.fireworks
-			position: fixed
 			z-index: -7
+			position: fixed
 			top: -20%
 			filter: contrast(188%) brightness(0%) 
 
-			// @media screen and (max-height: 864px)
-			// 	top: -20%
-			// 	width: 45%
-			// 	min-width: 600px
+		.booze
+			z-index: -6
+			// top: 38%
+			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
+
+		.flames
+			z-index: -5
+			width: 100%
+			min-height: 45%
+			object-fit: cover
+			bottom: 0px
+
+		.name
+			display: absolute
+			z-index: -3
+			top: -2%	
+			height: 20%
+			
+
+		.logo-container
+			display: flex
+			justify-content: center
+			align-items: center
+
+			.dirty
+				z-index: -1
+				position: fixed
+				// top: 20%
+
+			.thirty
+				z-index: -1
+				position: fixed
+				top: 28%
+
+
+		.unicorn
+
+			display: flex
+			justify-content: center
+			align-items: center
+			transform: scale(1) translateY(20%)
+
+			.head
+				z-index: 1
+				opacity: 1
+				right: 28px
+
+			.noel-glasses
+				z-index: 0
 
 </style>

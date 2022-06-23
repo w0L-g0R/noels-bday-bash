@@ -41,100 +41,6 @@
 	</div>
 </main>
 
-<!-- <style lang="sass">
-
-	@import './media-queries/extra-small.sass'
-	// @import './media-queries/small.sass'
-	// @import './media-queries/medium.sass'
-	// @import './media-queries/large.sass'
-
-	main
-		.bg
-			z-index: -8
-
-			position: fixed
-			top: 0
-			left: 0
-				
-			min-width: 100%
-			min-height: 100%
-			display: flex
-			justify-content: center
-			align-items: center
-
-		img
-			position: absolute
-
-		.grass
-			width: 100%
-			min-height: 45%
-			object-fit: cover
-			position: fixed
-			bottom: 0px
-			transform: translateY(60%)
-			z-index: -7
-
-		.just-kidding
-			z-index: 1
-			opacity: 0%
-			position: fixed
-
-
-		.rainbow
-			position: fixed
-			z-index: -6
-			top: 30%
-		
-		.ballons
-			opacity: 0%
-			position: fixed
-			z-index: -5
-			// transform: scale(0.9) 
-
-			&.right
-				right: 10vw
-
-			&.left
-				left: 10vw
-
-		.logo-container
-			position: fixed
-			top: 10%
-			// left: 10%
-
-			display: flex
-			justify-content: center
-			align-items: top
-
-			// transform: translate(-50%, -50%)
-			
-			&.logo
-				// position: relative
-				z-index: -4
-
-			&.name
-				// position: fixed	
-				z-index: -3
-				// transform: translateY(150px)
-				top: 200px
-
-		.noel
-			z-index: -2
-			position: fixed
-
-		.head
-			z-index: -1
-			position: fixed
-			top: 40%
-			opacity: 0
-
-		.click-me
-			opacity: 0%
-			position: fixed
-			z-index: 1
-
-
-</style> -->
 <style lang="sass">
 
 	@import './sweet-view.media-queries.sass'
@@ -163,11 +69,6 @@
 			object-fit: cover
 			bottom: 0px
 			z-index: -7
-
-		.just-kidding
-			z-index: 1
-			opacity: 0%
-
 
 		.rainbow
 			z-index: -6
@@ -202,5 +103,10 @@
 			opacity: 0%
 			position: fixed
 			z-index: 1
+
+
+		.just-kidding
+			z-index: 1
+			opacity: 0%
 
 </style>
