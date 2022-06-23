@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewSetupAnimations } from './animations/DirtyView.Setup';
-	// import { startSweetViewInfiniteAnimations } from './animations/DirtyView.Infinite';
+	import { startDirtyViewInfiniteAnimations } from './animations/DirtyView.Infinite';
 	// import { startSweetViewSetdownAnimations } from './animations/DirtyView.Setdown';
 
 	// const dispatchFinishedDestroyAnimations = createEventDispatcher();
@@ -15,7 +15,7 @@
 	// $: startSweetViewSetdownAnimations(startDestroySweetView, dispatchFinishedDestroyAnimations);
 
 	onMount(() => {
-		startDirtyViewSetupAnimations();
+		startDirtyViewSetupAnimations(startDirtyViewInfiniteAnimations);
 	});
 </script>
 
@@ -25,9 +25,10 @@
 		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
 		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
 		<div class="unicorn">
-			<img src="/dirty/noel_05_glasses.png" class="noel-glasses" alt="alt" />
+			<img src="/dirty/noel_04.png" class="noel-glasses" alt="alt" />
 			<img src="/sweet/head_01.png" class="head" alt="alt" />
 		</div>
+		<img src="/dirty/glasses_01.png" class="glasses" alt="alt" />
 		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" />
 		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
 		<div class="logo-container">
@@ -78,12 +79,12 @@
 			z-index: -7
 			position: fixed
 			top: -20%
-			filter: contrast(188%) brightness(0%) 
+			filter: contrast(100%) brightness(200%) 
 
 		.booze
 			z-index: -6
-			// top: 38%
-			filter: sepia(10%) drop-shadow(0px 18px 18px orange) contrast(88%) brightness(100%)
+			filter: sepia(-100%) drop-shadow(0px 18px 18px orange) contrast(100%) brightness(100%)
+			// opacity: 0
 
 		.flames
 			z-index: -5
@@ -129,5 +130,9 @@
 
 			.noel-glasses
 				z-index: 0
+
+		.glasses
+			z-index: 1
+
 
 </style>

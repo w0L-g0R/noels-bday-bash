@@ -6,6 +6,7 @@ main
             width: 100vw
 
         .unicorn
+            border: 2px gold solid
             position: absolute
             top: 40%
 
@@ -17,6 +18,12 @@ main
 
             .noel-glasses
                 height: 70vh
+
+        .glasses
+            position: relative
+            left: 1.5%
+            top: -7vh
+            // transform: scaleX(1)
 
         .name
             z-index: -3
@@ -40,12 +47,20 @@ main
         .fireworks
             width: 130vw
 
+    @include media("<=width-xs", "portrait")
+
+        .glasses
+            position: relative
+            left: 1.5%
+            top: -7vh
+            transform: scaleX(0.7)
+
     @include media(">=width-sm",  "landscape")
         .garden
             width: 10vw
 
         .unicorn
-            border: 2px blue solid
+            border: 2px green solid
             position: absolute
             transform: scale(0.8)
             top: 40%
@@ -54,6 +69,9 @@ main
                 position: relative
                 left: 10%
                 top: 83px
+
+        .glasses
+            transform: scaleY(1.5) translate(7%,-197%)
 
         .name
             z-index: -3
@@ -74,11 +92,11 @@ main
         .booze
             top: 30%
             width: 130vw
+            max-width: 600px
 
         .fireworks
-            // width: 80vw
             max-width: 600px
-            // transform: scale(0.7)
+
     // @include media(">=width-lg", "portrait")
 
     //     .name

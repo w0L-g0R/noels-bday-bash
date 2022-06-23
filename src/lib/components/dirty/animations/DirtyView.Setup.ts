@@ -3,7 +3,7 @@ import anime from 'animejs';
 
 import type { Animations } from 'src/shared/types';
 
-export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): void | any {
+export function startDirtyViewSetupAnimations(infiniteAnimation: Animations): void | any {
 	if (browser) {
 		const dirtyViewSetupAnimation = anime.timeline({
 			//each of the below animations will have a 1000ms duration
@@ -29,6 +29,16 @@ export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): v
 				targets: '.noel-glasses',
 				rotate: '2turn',
 				scale: [0, 1],
+				duration: 1000
+			},
+			'500'
+		);
+
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.glasses',
+				translateY: ['-200%', '0%'],
+				// scale: [0, 1],
 				duration: 1000
 			},
 			'500'
@@ -97,7 +107,8 @@ export function startDirtyViewSetupAnimations(infiniteAnimation?: Animations): v
 			{
 				targets: '.fireworks',
 				scale: ['0', '1'],
-				easing: 'easeInQuart'
+				easing: 'easeInQuart',
+				complete: infiniteAnimation
 			},
 			'1800'
 		);

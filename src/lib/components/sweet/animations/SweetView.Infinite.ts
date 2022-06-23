@@ -1,18 +1,17 @@
 import anime from 'animejs';
 
 export function startSweetViewInfiniteAnimations(): void | any {
-	const animeBallons = anime({
+	anime({
 		targets: '.ballons',
 		opacity: ['60%', '100%'],
 		translateY: ['220%', '-120%'],
 		duration: 4000,
 		easing: 'easeOutCubic',
 		loop: true,
-		delay: 1500,
-		autoplay: false
+		delay: 1500
 	});
 
-	const animeClickMe = anime({
+	anime({
 		targets: '.click-me',
 		opacity: ['0%', '100%'],
 		translateY: ['0%', '30%'],
@@ -20,28 +19,20 @@ export function startSweetViewInfiniteAnimations(): void | any {
 		delay: 500
 	});
 
-	const animeLogo = anime({
+	anime({
 		targets: '.logo',
-		keyframes: [
-			{ scale: 0.7, duration: 600 }
-			// { scale: 0.65, duration: 200 }
-		],
+		keyframes: [{ scale: 0.7, duration: 600 }],
 		easing: 'easeInOutSine',
 		direction: 'alternate',
 		loop: true
 	});
 
-	const animeNoel = anime({
+	anime({
 		targets: '.noel',
 		rotate: ['-6deg', '6deg'],
 		duration: 2000,
 		easing: 'linear',
 		loop: true,
-		direction: 'alternate',
-		// delay: 1500
-		autoplay: false
+		direction: 'alternate'
 	});
-
-	animeBallons.play();
-	animeNoel.play();
 }
