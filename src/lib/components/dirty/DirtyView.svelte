@@ -1,7 +1,9 @@
 <script lang="ts">
-	import NeonText from '$lib/NeonText.svelte';
+	import { fade, fly, blur, scale, slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
+	import NeonText from '$lib/elements/NeonText.svelte';
+	import ScrollArrow from '$lib/elements/ScrollArrow.svelte';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
 	// import { startSweetViewSetupAnimations } from './animations/DirtyView.Setup';
 	import { startDirtyViewInfiniteAnimations } from './animations/DirtyView.Infinite';
@@ -20,7 +22,7 @@
 </script>
 
 <main>
-	<div class="bg">
+	<div class="bg" out:fly={{ delay: 500, easing: quintOut, y: -2000, duration: 3000 }}>
 		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" />
 		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
 		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
@@ -38,6 +40,9 @@
 			<div class="thirty">
 				<NeonText --font-family="Automania" showDirty={false} />
 			</div>
+		</div>
+		<div class="scroll-arrow">
+			<ScrollArrow />
 		</div>
 	</div>
 </main>
@@ -133,6 +138,11 @@
 
 		.glasses
 			z-index: 1
+			opacity: 0
+			// top: translateY(20%)
 
-
+		.scroll-arrow
+			position: fixed
+			// top: 20%
+			// left: 51%
 </style>

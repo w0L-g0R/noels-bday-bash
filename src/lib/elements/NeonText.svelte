@@ -1,4 +1,24 @@
-.sign
+<script lang="ts">
+	export let showDirty: boolean = false;
+</script>
+
+<main>
+	{#if showDirty}
+		<div class="sign">
+			<span class="fast-flicker">D</span>ir<span class="flicker">t</span>y
+		</div>
+	{:else}
+		<div class="sign">
+			T<span class="fast-flicker">hi</span><span class="flicker">r</span>
+
+			t<span class="fast-flicker">y</span>
+		</div>
+	{/if}
+</main>
+
+<style lang="sass">
+
+.sign 
     position: absolute
     display: flex
     justify-content: center
@@ -12,136 +32,177 @@
     top: 50%
     font-family: var(--font-family)
     text-transform: uppercase
-    font-size: 6em
+    font-size: 4.5rem
     color: #ffe6ff
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,-0.2rem 0.1rem 1rem #ff65bd,0.2rem 0.1rem 1rem #ff65bd,0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483
     animation: shine 2s forwards, flicker 3s infinite
 
-@keyframes blink
+
+    @include media("<=width-xs", "portrait")
+        font-size: 3rem
+
+@keyframes blink 
     0%,
     22%,
     36%,
-    75%
+    75% 
         color: #ffe6ff
         text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd, -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd, 0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483
-
+    
     28%,
-    33%
+    33% 
         color: #ff65bd
         text-shadow: none
-
+    
     82%,
-    97%
+    97% 
         color: #ff2483
         text-shadow: none
 
-.flicker
+
+.flicker 
     animation: shine 2s forwards, blink 3s 2s infinite
-    font-family: var(--font-family)
+    font-family: "Automania"
 
-.fast-flicker
+
+.fast-flicker 
     animation: shine 2s forwards, blink 10s 1s infinite
-    font-family: var(--font-family)
+    font-family: "Automania"
 
-@keyframes shine
-    0%
+
+
+@keyframes shine 
+    0% 
         color: #6b1839
         text-shadow: none
-
-    100%
+    
+    100% 
         color: #ffe6ff
         text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd, -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd, 0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483
-
-@keyframes flicker
-    from
+    
+@keyframes flicker 
+    from 
         opacity: 1
+    
 
-    4%
+    4% 
         opacity: 0.9
+    
 
-    6%
+    6% 
         opacity: 0.85
+    
 
-    8%
+    8% 
         opacity: 0.95
+    
 
-    10%
+    10% 
         opacity: 0.9
+    
 
-    11%
+    11% 
         opacity: 0.922
+    
 
-    12%
+    12% 
         opacity: 0.9
+    
 
-    14%
+    14% 
         opacity: 0.95
+    
 
-    16%
+    16% 
         opacity: 0.98
+    
 
-    17%
+    17% 
         opacity: 0.9
+    
 
-    19%
+    19% 
         opacity: 0.93
+    
 
-    20%
+    20% 
         opacity: 0.99
+    
 
-    24%
+    24% 
         opacity: 1
+    
 
-    26%
+    26% 
         opacity: 0.94
+    
 
-    28%
+    28% 
         opacity: 0.98
+    
 
-    37%
+    37% 
         opacity: 0.93
+    
 
-    38%
+    38% 
         opacity: 0.5
+    
 
-    39%
+    39% 
         opacity: 0.96
+    
 
-    42%
+    42% 
         opacity: 1
+    
 
-    44%
+    44% 
         opacity: 0.97
+    
 
-    46%
+    46% 
         opacity: 0.94
+    
 
-    56%
+    56% 
         opacity: 0.9
+    
 
-    58%
+    58% 
         opacity: 0.9
+    
 
-    60%
+    60% 
         opacity: 0.99
+    
 
-    68%
+    68% 
         opacity: 1
+    
 
-    70%
+    70% 
         opacity: 0.9
+    
 
-    72%
+    72% 
         opacity: 0.95
+    
 
-    93%
+    93% 
         opacity: 0.93
+    
 
-    95%
+    95% 
         opacity: 0.95
+    
 
-    97%
+    97% 
         opacity: 0.93
+    
 
-    to
+    to 
         opacity: 1
+    
+
+</style>

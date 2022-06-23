@@ -19,6 +19,16 @@ export function startDirtyViewInfiniteAnimations(): void | any {
 		// easing: 'spring(1, 20, 30, 10)'
 		easing: 'easeInQuad'
 	});
+
+	anime({
+		targets: '.glasses',
+		translateY: ['0%', '-85%'],
+		duration: 250,
+		loop: true,
+		direction: 'alternate',
+		easing: 'easeInSine'
+	});
+
 	setTimeout(() => {
 		anime({
 			targets: '.fireworks',

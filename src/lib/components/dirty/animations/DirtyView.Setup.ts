@@ -37,11 +37,11 @@ export function startDirtyViewSetupAnimations(infiniteAnimation: Animations): vo
 		dirtyViewSetupAnimation.add(
 			{
 				targets: '.glasses',
-				translateY: ['-200%', '0%'],
-				// scale: [0, 1],
+				translateY: ['-400%', '0%'],
+				opacity: [0, 1],
 				duration: 1000
 			},
-			'500'
+			'1500'
 		);
 
 		// FLAMES;

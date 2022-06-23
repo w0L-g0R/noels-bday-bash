@@ -1,9 +1,12 @@
 import { browser } from '$app/env';
 import anime from 'animejs';
 
-import type { Animations } from 'src/shared/types';
+import type { Animations, Dispatch } from 'src/shared/types';
 
-export function startSweetViewSetupAnimations(infiniteAnimation: Animations): void | any {
+export function startSweetViewSetupAnimations(
+	infiniteAnimation: Animations,
+	dispatch: Dispatch
+): void | any {
 	if (browser) {
 		const introOne = anime.timeline({
 			//each of the below animations will have a 1000ms duration
@@ -54,7 +57,8 @@ export function startSweetViewSetupAnimations(infiniteAnimation: Animations): vo
 			{
 				targets: '.rainbow',
 				scale: ['150%', '100%'],
-				easing: 'easeOutCubic'
+				easing: 'easeOutCubic',
+				complete: infiniteAnimation
 			},
 			'1800'
 		);
@@ -65,7 +69,11 @@ export function startSweetViewSetupAnimations(infiniteAnimation: Animations): vo
 				targets: '.rainbow',
 				opacity: ['0%', '80%'],
 				easing: 'easeOutCubic',
-				complete: infiniteAnimation
+				complete: () => {
+					setTimeout(() => {
+						dispatch('finishedSetup');
+					}, 1000);
+				}
 			},
 			'1500'
 		);

@@ -23,11 +23,10 @@ main
             position: relative
             left: 1.5%
             top: -7vh
-            // transform: scaleX(1)
 
         .name
             z-index: -3
-            width: 100%
+            width: 80%
 
         .logo-container
             position: absolute
@@ -47,13 +46,21 @@ main
         .fireworks
             width: 130vw
 
+        .scroll-arrow
+            position: fixed
+            transform: translate(5%,152%) scale(1)
+
     @include media("<=width-xs", "portrait")
 
         .glasses
             position: relative
             left: 1.5%
             top: -7vh
-            transform: scaleX(0.7)
+            transform: scaleX(0.6)
+
+        .scroll-arrow
+            position: fixed
+            transform: translate(5%,132%) scale(0.8)
 
     @include media(">=width-sm",  "landscape")
         .garden
@@ -71,7 +78,8 @@ main
                 top: 83px
 
         .glasses
-            transform: scaleY(1.5) translate(7%,-197%)
+            top: 39%
+            left: 47%
 
         .name
             z-index: -3
@@ -97,18 +105,7 @@ main
         .fireworks
             max-width: 600px
 
-    // @include media(">=width-lg", "portrait")
-
-    //     .name
-    //         z-index: -3
-    //         border: 2px red solid
-
-    //     .dirty
-    //         z-index: -1
-    //         position: fixed
-    //         top: 20%
-
-    //     .thirty
-    //         z-index: -1
-    //         position: fixed
-    //         top: 28%
+        .scroll-arrow
+            position: fixed
+            top: 50%
+            left: 31%

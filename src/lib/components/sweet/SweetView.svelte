@@ -1,5 +1,5 @@
 <script lang="ts">
-	import JumpingText from '$lib/JumpingText.svelte';
+	import JumpingText from '$lib/elements/JumpingText.svelte';
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
 	import { startSweetViewSetupAnimations } from './animations/SweetView.Setup';
@@ -7,14 +7,16 @@
 	import { startSweetViewSetdownAnimations } from './animations/SweetView.Setdown';
 
 	const dispatchFinishedDestroyAnimations = createEventDispatcher();
+	const dispatchFinishedSetup = createEventDispatcher();
 
 	export let destroySweetView = false;
+	export let finishedSetup = false;
 
 	// Dispatches the "finish destroy animation" event
 	$: startSweetViewSetdownAnimations(destroySweetView, dispatchFinishedDestroyAnimations);
 
 	onMount(() => {
-		startSweetViewSetupAnimations(startSweetViewInfiniteAnimations);
+		startSweetViewSetupAnimations(startSweetViewInfiniteAnimations, dispatchFinishedSetup);
 	});
 </script>
 

@@ -1,14 +1,17 @@
 <script lang="ts">
-	import { fade, fly, blur, scale } from 'svelte/transition';
+	import { fade, fly, blur, scale, slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 	import SweetView from '$lib/components/sweet/SweetView.svelte';
 	import DirtyView from '$lib/components/dirty/DirtyView.svelte';
-
 	let sweetView: boolean = true;
 	let destroySweetView: boolean = false;
 	let dirtyView: boolean = false;
+	let isViewClickable: boolean = true;
 
 	function changeView() {
-		destroySweetView = true;
+		if (isViewClickable) {
+			destroySweetView = true;
+		}
 	}
 
 	function removeSweetViewTemplateElements() {
@@ -19,16 +22,25 @@
 </script>
 
 <main>
-	<button on:click={changeView}>PAUSE</button>
-
 	{#if sweetView}
-		<div out:fade>
-			<SweetView {destroySweetView} on:finishedSetdownSweetView={removeSweetViewTemplateElements} />
+		<div out:fade on:click={changeView}>
+			<SweetView
+				{destroySweetView}
+				on:finishedSetdownSweetView={removeSweetViewTemplateElements}
+				on:finishedSetup={() => {
+					isViewClickable = true;
+				}}
+			/>
 		</div>
 	{/if}
 
 	{#if dirtyView}
-		<div>
+		<div
+			on:click={() => {
+				console.log('Hi');
+				dirtyView = false;
+			}}
+		>
 			<DirtyView />
 		</div>
 	{/if}
