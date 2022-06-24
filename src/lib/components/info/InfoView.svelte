@@ -76,7 +76,7 @@
 								<div slot="text">
 									<p><span style="color: darkblue;">Date:</span> <br />Samstag, 02.07.2022</p>
 									<br />
-									<p><span style="color: darkblue;">Start:</span> <time>15:00</time></p>
+									<p><span style="color: darkblue;">Start:</span><br /> <time>15:00</time></p>
 								</div>
 							</Content>
 						{/if}
@@ -92,7 +92,7 @@
 						{#if name === 'who'}
 							<Content --font-size="1.25rem">
 								<div slot="link">
-									<a href="https://doodle.com/meeting/participate/id/bWnBQnva/vote">Gästeliste</a>
+									<a href="https://doodle.com/meeting/participate/id/bWnBQnva">Gästeliste</a>
 								</div>
 							</Content>
 						{/if}
@@ -148,7 +148,7 @@
 		background-image: url("/bg/waves.svg")
 		background-position: center
 		background-size: cover
-		background-color: #FFDCAB
+		// background-color: #FFDCAB
 		box-shadow: 0px 0px 0px 15px black inset
 		overflow: hidden
 

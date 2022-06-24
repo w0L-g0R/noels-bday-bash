@@ -10,7 +10,6 @@
 	const dispatchFinishedSetup = createEventDispatcher();
 
 	export let destroySweetView = false;
-	export let finishedSetup = false;
 
 	// Dispatches the "finish destroy animation" event
 	$: startSweetViewSetdownAnimations(destroySweetView, dispatchFinishedDestroyAnimations);

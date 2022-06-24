@@ -1,9 +1,12 @@
 import { browser } from '$app/env';
 import anime from 'animejs';
 
-import type { Animations } from 'src/shared/types';
+import type { Animations, Dispatch } from 'src/shared/types';
 
-export function startDirtyViewSetupAnimations(infiniteAnimation: Animations): void | any {
+export function startDirtyViewSetupAnimations(
+	infiniteAnimation: Animations,
+	dispatch: Dispatch
+): void | any {
 	if (browser) {
 		const dirtyViewSetupAnimation = anime.timeline({
 			//each of the below animations will have a 1000ms duration
@@ -113,46 +116,20 @@ export function startDirtyViewSetupAnimations(infiniteAnimation: Animations): vo
 			'1800'
 		);
 
-		// // NOEL
-		// introOne.add(
-		// 	{
-		// 		targets: '.noel',
-		// 		rotate: '-6deg',
-		// 		translateY: ['150%', '20%'],
-		// 		easing: 'spring(1, 20, 30, 10)'
-		// 	},
-		// 	'1400'
-		// );
-
-		// // LOGO
-		// introOne.add(
-		// 	{
-		// 		targets: '.logo',
-		// 		scale: ['0%', '100%'],
-		// 		easing: 'easeOutBounce'
-		// 	},
-		// 	'1000'
-		// );
-
-		// // RAINBOW SCALE
-		// introOne.add(
-		// 	{
-		// 		targets: '.rainbow',
-		// 		scale: ['150%', '100%'],
-		// 		easing: 'easeOutCubic'
-		// 	},
-		// 	'1800'
-		// );
-
-		// // RAINBOW OPACITY
-		// introOne.add(
-		// 	{
-		// 		targets: '.rainbow',
-		// 		opacity: ['0%', '80%'],
-		// 		easing: 'easeOutCubic',
-		// 		complete: infiniteAnimation
-		// 	},
-		// 	'1500'
-		// );
+		// DIRTY;
+		dirtyViewSetupAnimation.add(
+			{
+				targets: '.pixel-text',
+				translateY: ['100vh', '35vh'],
+				easing: 'easeInOutQuint',
+				duration: 1500,
+				complete: () => {
+					dispatch('finishedSetup');
+					// setTimeout(() => {
+					// }, 200);
+				}
+			},
+			'2000'
+		);
 	}
 }

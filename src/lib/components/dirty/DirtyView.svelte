@@ -1,31 +1,33 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fly, fade, slide } from 'svelte/transition';
+	import { quintOut, bounceOut } from 'svelte/easing';
 	import NeonText from '$lib/elements/NeonText.svelte';
-	import ScrollArrow from '$lib/elements/ScrollArrow.svelte';
-	import { onMount } from 'svelte';
+	import PixelText from '$lib/elements/PixelText.svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
 
 	import { startDirtyViewInfiniteAnimations } from './animations/DirtyView.Infinite';
 
+	const dispatchFinishedSetup = createEventDispatcher();
+
 	onMount(() => {
-		startDirtyViewSetupAnimations(startDirtyViewInfiniteAnimations);
+		startDirtyViewSetupAnimations(startDirtyViewInfiniteAnimations, dispatchFinishedSetup);
 	});
 </script>
 
 <main>
-	<div class="bg" out:fly={{ delay: 500, easing: quintOut, y: -2000, duration: 3000 }}>
-		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" />
-		<img src="/dirty/flames_03.png" class="flames" alt="alt" />
-		<img src="/dirty/boooze_01.png" class="booze" alt="alt" />
+	<div class="bg">
+		<img src="/dirty/garden_party_01.png" class="garden" alt="alt" out:fade={{ duration: 100 }} />
+		<img src="/dirty/flames_03.png" class="flames" alt="alt" out:fade={{ duration: 100 }} />
+		<img src="/dirty/boooze_01.png" class="booze" alt="alt" out:fade={{ duration: 100 }} />
 		<div class="unicorn">
 			<img src="/dirty/noel_04.png" class="noel-glasses" alt="alt" />
 			<img src="/sweet/head_01.png" class="head" alt="alt" />
 		</div>
 		<img src="/dirty/glasses_01.png" class="glasses" alt="alt" />
-		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" />
-		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" />
-		<div class="logo-container">
+		<img src="/dirty/fireworks_01.png" class="fireworks" alt="alt" out:fade={{ duration: 100 }} />
+		<img src="/dirty/noel_txt_02.png" class="name" alt="alt" out:fly={{ duration: 3000, y: 200 }} />
+		<div class="logo-container" out:fade={{ duration: 100 }}>
 			<div class="dirty">
 				<NeonText --font-family="Automania" showDirty={true} />
 			</div>
@@ -33,8 +35,8 @@
 				<NeonText --font-family="Automania" showDirty={false} />
 			</div>
 		</div>
-		<div class="scroll-arrow">
-			<ScrollArrow />
+		<div class="pixel-text" out:fade={{ duration: 100 }}>
+			<PixelText />
 		</div>
 	</div>
 </main>
@@ -52,10 +54,13 @@
 				
 			min-width: 100%
 			min-height: 100%
+			height: 100vh
+			box-shadow: 0px 0px 0px 15px black inset
 
 			display: flex
 			justify-content: center
 			align-items: center
+			background-color: black
 
 		img
 			position: absolute
@@ -105,7 +110,6 @@
 			.dirty
 				z-index: -1
 				position: fixed
-				// top: 20%
 
 			.thirty
 				z-index: -1
@@ -133,10 +137,6 @@
 			z-index: 1
 			opacity: 0
 
-			// transform: translateY(260%)
-
-		.scroll-arrow
+		.pixel-text
 			position: fixed
-			// top: 20%
-			// left: 51%
 </style>
