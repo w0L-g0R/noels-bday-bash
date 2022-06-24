@@ -62,17 +62,17 @@
 		<div class="buttons">
 			{#each buttonNames as name}
 				<div class="button {name}" on:click|preventDefault|self={() => onClick(`${name}`)}>
-					<div class="header">{name}</div>
+					<div class="header" on:click|preventDefault|self={() => onClick(`${name}`)}>{name}</div>
 
 					{#if isOpen[name]}
 						{#if name === 'what'}
-							<Content --font-size="1.25rem">
+							<Content --font-size="1.25em">
 								<div slot="text">Noel's 30er Bday Partypicknik @Prater</div>
 							</Content>
 						{/if}
 
 						{#if name === 'when'}
-							<Content --font-size="1.5rem">
+							<Content --font-size="1.25em">
 								<div slot="text">
 									<p><span style="color: darkblue;">Date:</span> <br />Samstag, 02.07.2022</p>
 									<br />
@@ -82,7 +82,7 @@
 						{/if}
 
 						{#if name === 'where'}
-							<Content --font-size="1.25rem">
+							<Content --font-size="1.25em">
 								<div slot="link">
 									<a href="https://goo.gl/maps/oCHBfHGkVY8J63st9"> JesuitenWiese</a>
 								</div>
@@ -90,7 +90,7 @@
 						{/if}
 
 						{#if name === 'who'}
-							<Content --font-size="1.25rem">
+							<Content --font-size="1.25em">
 								<div slot="link">
 									<a href="https://doodle.com/meeting/participate/id/bWnBQnva">Gästeliste</a>
 								</div>
@@ -98,7 +98,7 @@
 						{/if}
 
 						{#if name === 'info'}
-							<Content --font-size="1.25rem">
+							<Content --font-size="1em">
 								<div slot="text">
 									<div style="padding: 2vw">
 										<ul>
@@ -113,7 +113,7 @@
 											</li>
 											<br />
 											<li>
-												<span style="color: orange"> Guadwa': <br /></span> Picknickdecken
+												<span style="color: orange"> Guadwa': <br /></span> Picknickdecken & eure Begleitung
 											</li>
 										</ul>
 										<br />
@@ -137,9 +137,10 @@
 		font-style: normal
 		font-size: $fontSize
 		font-weight: bold
+		z-index: -1
 
-		@media (max-width: 400px)
-			font-size: 2em
+		@media (max-width: 340px)
+			font-size: 1.25em
 
 	main	
 		aspect-ratio: 900/450
@@ -148,7 +149,6 @@
 		background-image: url("/bg/waves.svg")
 		background-position: center
 		background-size: cover
-		// background-color: #FFDCAB
 		box-shadow: 0px 0px 0px 15px black inset
 		overflow: hidden
 
@@ -161,6 +161,12 @@
 
 			justify-items: center
 			align-items: center
+
+			div 
+				a
+					@media (max-width: 400px)
+						font-size: 0.85em
+
 
 			.buttons
 

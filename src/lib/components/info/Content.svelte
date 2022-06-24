@@ -29,9 +29,8 @@
 				font-weight: bold
 				padding: 1vw
 
-				@include media("<=width-sm", "portrait")
-					font-size: 1em
-
+				@include media("<=width-xs", "portrait")
+					font-size: 0.8em
 
 			.link
 				font-family: "Roboto", sans-serif

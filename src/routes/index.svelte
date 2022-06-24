@@ -15,11 +15,11 @@
 		if (isSweetViewClickable) {
 			destroySweetView = true;
 
-			let sound = document.getElementById('audio');
+			// let sound = document.getElementById('audio');
 
-			if (sound) {
-				sound.play();
-			}
+			// if (sound) {
+			// 	sound.play();
+			// }
 		}
 	}
 
@@ -68,7 +68,8 @@
 			<InfoView />
 		</div>
 	{/if}
-	<audio id="audio" src="/src/lib/audio/spell.mp3" />
+	<!-- <audio id="audio" src="/src/lib/audio/spell.mp3" /> -->
+	<!-- <audio id="audio" src="/static/audio/spell.mp3" /> -->
 </main>
 
 <style lang="sass">

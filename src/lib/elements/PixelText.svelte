@@ -2,8 +2,7 @@
 </script>
 
 <main class="container">
-	<div class="neons">Wanna</div>
-	<div class="neons">Join?</div>
+	<div class="neons">Join!</div>
 </main>
 
 <style lang="sass">
@@ -19,7 +18,7 @@
 
     .neons 
         font-family: 'Neon Pixel', sans-serif
-        font-size: 5rem
+        font-size: 4rem
         text-align: center
         animation: glow 2s ease-in-out infinite alternate
 

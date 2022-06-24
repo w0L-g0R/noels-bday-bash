@@ -120,7 +120,8 @@ export function startDirtyViewSetupAnimations(
 		dirtyViewSetupAnimation.add(
 			{
 				targets: '.pixel-text',
-				translateY: ['100vh', '35vh'],
+				translateY: ['100vh', '20vh'],
+				translateX: ['0', '2vw'],
 				easing: 'easeInOutQuint',
 				duration: 1500,
 				complete: () => {
