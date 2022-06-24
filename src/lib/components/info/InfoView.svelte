@@ -83,16 +83,18 @@
 
 						{#if name === 'where'}
 							<Content --font-size="1.25em">
+								<div slot="text">Let's meet up</div>
 								<div slot="link">
-									<a href="https://goo.gl/maps/oCHBfHGkVY8J63st9"> JesuitenWiese</a>
+									@<a href="https://goo.gl/maps/oCHBfHGkVY8J63st9">Jesuitenwiese!</a>
 								</div>
 							</Content>
 						{/if}
 
 						{#if name === 'who'}
 							<Content --font-size="1.25em">
+								<div slot="text">Please subscribe to the</div>
 								<div slot="link">
-									<a href="https://doodle.com/meeting/participate/id/bWnBQnva">Gästeliste</a>
+									<a href="https://doodle.com/meeting/participate/id/bWnBQnva">Gästeliste!</a>
 								</div>
 							</Content>
 						{/if}

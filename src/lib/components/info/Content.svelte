@@ -7,7 +7,6 @@
 	<div class="text">
 		<slot name="text" />
 	</div>
-
 	<div class="link">
 		<slot name="link" />
 	</div>
@@ -20,6 +19,7 @@
 			display: flex
 			justify-content: center
 			align-content: center
+			flex-direction: column
 			// width: 100%
 
 			.text
@@ -27,13 +27,13 @@
 				font-style: normal
 				font-size: var(--font-size)
 				font-weight: bold
-				padding: 1vw
+				// padding: 1vw
 
 				@include media("<=width-xs", "portrait")
 					font-size: 0.8em
 
 			.link
-				font-family: "Roboto", sans-serif
+				font-family: "Quicksand", sans-serif
 				font-style: normal
 				font-size: var(--font-size)
 				font-weight: bold
