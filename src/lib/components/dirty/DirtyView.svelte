@@ -1,20 +1,12 @@
 <script lang="ts">
-	import { fade, fly, blur, scale, slide } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import NeonText from '$lib/elements/NeonText.svelte';
 	import ScrollArrow from '$lib/elements/ScrollArrow.svelte';
 	import { onMount } from 'svelte';
 	import { startDirtyViewSetupAnimations } from './animations/DirtyView.Setup';
-	// import { startSweetViewSetupAnimations } from './animations/DirtyView.Setup';
+
 	import { startDirtyViewInfiniteAnimations } from './animations/DirtyView.Infinite';
-	// import { startSweetViewSetdownAnimations } from './animations/DirtyView.Setdown';
-
-	// const dispatchFinishedDestroyAnimations = createEventDispatcher();
-
-	// export let startDestroySweetView = false;
-
-	// // Dispatches the "finish destroy animation" event
-	// $: startSweetViewSetdownAnimations(startDestroySweetView, dispatchFinishedDestroyAnimations);
 
 	onMount(() => {
 		startDirtyViewSetupAnimations(startDirtyViewInfiniteAnimations);
@@ -137,9 +129,11 @@
 				z-index: 0
 
 		.glasses
+			position: relative
 			z-index: 1
 			opacity: 0
-			// top: translateY(20%)
+
+			// transform: translateY(260%)
 
 		.scroll-arrow
 			position: fixed

@@ -3,6 +3,7 @@
 	import { quintOut } from 'svelte/easing';
 	import SweetView from '$lib/components/sweet/SweetView.svelte';
 	import DirtyView from '$lib/components/dirty/DirtyView.svelte';
+	import InfoView from '$lib/components/info/InfoView.svelte';
 	let sweetView: boolean = true;
 	let destroySweetView: boolean = false;
 	let dirtyView: boolean = false;
@@ -22,7 +23,7 @@
 </script>
 
 <main>
-	{#if sweetView}
+	<!-- {#if sweetView}
 		<div out:fade on:click={changeView}>
 			<SweetView
 				{destroySweetView}
@@ -43,7 +44,9 @@
 		>
 			<DirtyView />
 		</div>
-	{/if}
+	{/if} -->
+
+	<InfoView />
 </main>
 
 <style lang="sass">
